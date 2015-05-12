@@ -29,10 +29,6 @@ export default (cb) => (req, res) => {
     } else if(data instanceof Right) {
       // If the data is a Right value, just unwrap the contained data
       return handler(data.r)
-    } else if(data == undefined && res.statusCode == undefined) {
-      // If the data is undefined and the statusCode has not been set,
-      // respond with a 204 No Content
-      res.status(204).end()
     } else {
       // Finally, serialized the data as JSON
       res.json(data)
