@@ -1,6 +1,6 @@
 {
   "name": "fantasy-express-resource",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Fantasy Land support for express",
   "homepage": "https://github.com/ericmoritz/node-fantasy-express-resource",
   "license": "MIT",
