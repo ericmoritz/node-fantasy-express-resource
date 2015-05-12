@@ -62,11 +62,22 @@ const trace = msg => x => {
   console.log(msg, x)
   return x
 }
+
+const NullPromise = () => new Promise(resolve => resolve(undefined))
+
 app.put('/:key', ExpressResource(
   (req, res) =>
     validateBody(req.body)
     .chain(validateData)
     .map(
-      form => db.put(req.params.key, form)
+      form => db
+        .put(
+          req.params.key, form
+        ).then(
+          _ => {
+            res.status(204)
+            return NullPromise
+          }
+        )
     )
 ))

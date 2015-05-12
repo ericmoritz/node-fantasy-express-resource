@@ -16,18 +16,11 @@ describe('example service', () => {
   })
 
   it('should support PUT', done => {
-      request(app).put('/ericmoritz')
-        .set('Content-Type', 'application/json')
-        .send({'name': 'Eric Moritz'})
-        .expect(200)
-        .end(
-          () => {
-            request(app).get('/ericmoritz')
-              .expect(200)
-              .expect({'name': 'Eric Moritz', '@id': '/ericmoritz'})
-              .end(done)
-          }
-        )
+    request(app).put('/ericmoritz')
+      .set('Content-Type', 'application/json')
+      .send({'name': 'Eric Moritz'})
+      .expect(204)
+      .end(done)
   })
 
   it('should support GET 200', done => {
