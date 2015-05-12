@@ -4,6 +4,15 @@ express-fantasy-resource
 This module allows you to write your route handlers as expressions
 and it maps Promises, Options, and Eithers to obvious HTTP status code.
 
+Types to HTTP Status Codes
+---------------------------
+
+* Left(a) -> 400, res.body = a
+* Right(a) -> 200, res.body = a
+* None -> 404
+* Some(a) -> 200, res.body = a
+
+
 Example
 --------
 
@@ -73,12 +82,23 @@ const trace = msg => x => {
   console.log(msg, x)
   return x
 }
+
+const NullPromise = () => new Promise(resolve => resolve(undefined))
+
 app.put('/:key', ExpressResource(
   (req, res) =>
     validateBody(req.body)
     .chain(validateData)
     .map(
-      form => db.put(req.params.key, form)
+      form => db
+        .put(
+          req.params.key, form
+        ).then(
+          _ => {
+            res.status(204)
+            return NullPromise
+          }
+        )
     )
 ))
 ```
