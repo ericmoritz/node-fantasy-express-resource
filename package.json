@@ -1,0 +1,18 @@
+{
+  "name": "fantasy-express-resource",
+  "version": "0.0.1",
+  "description": "Fantasy Land support for express",
+  "main": "express-resource.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eric Moritz",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.2.17",
+    "expect": "^1.6.0",
+    "fantasy-eithers": "0.0.2",
+    "fantasy-options": "0.0.1",
+    "mocha": "^2.2.4"
+  }
+}
