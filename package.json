@@ -2,24 +2,24 @@
   "name": "fantasy-express-resource",
   "version": "0.0.1",
   "description": "Fantasy Land support for express",
+  "homepage": "https://github.com/ericmoritz/node-fantasy-express-resource",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ericmoritz/node-fantasy-express-resource.git"
+  },
   "main": "lib/express-resource.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Eric Moritz",
-  "license": "MIT",
   "devDependencies": {
     "babel": "^5.2.17",
     "body-parser": "^1.12.4",
     "expect": "^1.6.0",
     "express": "https://github.com/visionmedia/express/tarball/master",
-    "express-mock-request": "0.0.2",
-    "fantasy-eithers": "0.0.2",
-    "fantasy-options": "0.0.1",
+    "express-promise": "^0.4.0",
     "mocha": "^2.2.4",
-    "node-mocks-http": "^1.4.2",
-    "q": "^1.4.0",
-    "simple-mock": "^0.3.0",
     "supertest": "^0.15.0"
   },
   "dependencies": {
