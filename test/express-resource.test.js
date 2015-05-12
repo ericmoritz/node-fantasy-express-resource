@@ -3,7 +3,6 @@ import expressPromise from 'express-promise'
 import express from 'express'
 import expect from 'expect'
 import request from 'supertest'
-import Q from 'q'
 import {Some, None} from 'fantasy-options'
 import {Left, Right} from 'fantasy-eithers'
 
