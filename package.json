@@ -2,7 +2,7 @@
   "name": "fantasy-express-resource",
   "version": "0.0.1",
   "description": "Fantasy Land support for express",
-  "main": "express-resource.js",
+  "main": "lib/express-resource.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,8 +11,18 @@
   "devDependencies": {
     "babel": "^5.2.17",
     "expect": "^1.6.0",
+    "express": "https://github.com/visionmedia/express/tarball/master",
+    "express-mock-request": "0.0.2",
     "fantasy-eithers": "0.0.2",
     "fantasy-options": "0.0.1",
-    "mocha": "^2.2.4"
+    "mocha": "^2.2.4",
+    "node-mocks-http": "^1.4.2",
+    "q": "^1.4.0",
+    "simple-mock": "^0.3.0",
+    "supertest": "^0.15.0"
+  },
+  "dependencies": {
+    "fantasy-eithers": "0.0.2",
+    "fantasy-options": "0.0.1"
   }
 }

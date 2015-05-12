@@ -1,5 +1,4 @@
 /* -*- mode: javascript -*- */
-/* @flow */
 import {Left, Right} from 'fantasy-eithers'
 import {Some, None} from 'fantasy-options'
 
@@ -10,7 +9,12 @@ export default (cb) => (req, res) => {
   let handler = (data) => {
     if(isPromise(data)) {
       // If the data is a promise, then bind the handler
-      data.then(handler).done()
+      data.then(handler).catch(
+        err => {
+          res.status(500)
+          res.end()
+        }
+      )
     } else if(data == None) {
       // If the data is None, respond with a 404 Not Found
       res.status(404).end()
